@@ -2,7 +2,7 @@
 
 ## Install
 
-To install the game in your terminal, follow the steps below:
+To install the alarm in your terminal, follow the steps below:
 
 1. git clone https://github.com/Gaukharik/youtube-alarm-clock
 2. cd youtube-alarm-clock
