@@ -1,6 +1,8 @@
-# Youtube Alarm Clock
+# Open Link at Time
 
-## Install
+This is a Node.js script that prompts the user for a link and a time, and opens the link in the default browser at the specified time.
+
+## Installation
 
 To install the alarm in your terminal, follow the steps below:
 
@@ -11,18 +13,16 @@ To install the alarm in your terminal, follow the steps below:
 5. npm i datejs
 6. node app.js
 
-# Alarm Clock Objective
+## Usage
 
-1. App will ask the user to enter the desired Youtube link.
-2. App will ask the user to enter the desired time to open Youtube link.
-   - If user enters the time in the future the link will be opened on the next closest time to current time.
-   - If user enters the time in the past the link will be opened next day.
-3. App will provide how many minutes left till link will be opened.
+You will be prompted to enter a link and a time in the format hh:mm am/pm. The script will then calculate the time until the link should be opened, and display a message indicating the number of minutes until the link will be opened.
 
-## Sample of using app.js
+Once the time has elapsed, the link will be opened in the default browser.
 
-Once the user enters node app.js:
+## How it Works
 
-1. The prompt will ask: `Which link would you like to open?`. The user should enter the desired link.
-2. The prompt will ask: `What time you would like the link to open?`. The user should enter the desired time the link will be opened.
-3. The app will show how many minutes left till link will be opened.
+The script prompts the user for a link and a time using the `inquirer` package. It then calculates the time until the link should be opened using the `Date.now()` method to get the current time, and the `Date.parse()` method to parse the input time.
+
+If the input time is in the past, the script will add 24 hours to the time to open the link the next day. The time until the link should be opened is then calculated using the `setTimeout()` method.
+
+If the input time is in the future, the time until the link should be opened is calculated directly using the `setTimeout()` method.
